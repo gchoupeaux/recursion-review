@@ -4,7 +4,6 @@
 // };
 
 // But instead we're going to implement it from scratch:
-
 var getElementsByClassName = function(className, node, array) {
   var node = node || document.body;
   var array = array || [];
@@ -14,20 +13,21 @@ var getElementsByClassName = function(className, node, array) {
     array.push(node);
   }
   // get node clildren
-
   var children = node.childNodes;
 
   // for loop on each node
   if (children) {
-    for (let i=0; i<children.length; i++) {
+    for (let i = 0; i < children.length; i++) {
       getElementsByClassName(className, children[i], array);
     }
   }
   return array;
-}
+};
 
 
 /*
+  // Not completed: using sibling should also worked
+
   var array = array || [];
 
   if (node.nodeType === 1 && node.className === className) {
@@ -44,5 +44,3 @@ var getElementsByClassName = function(className, node, array) {
   }
   return array;
 */
-
-// test commit with pomander
